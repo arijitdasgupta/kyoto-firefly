@@ -34,7 +34,7 @@ pub fn main() {
         i = (i + 1) % 255;
 
         canvas.set_draw_color(Color::RGB(i, 64, 255 - i));
-        let mut rect = Rect::new(offset_x, offset_y, 100, 100);
+        let rect = Rect::new(offset_x, offset_y, 100, 100);
 
         let _ = canvas.fill_rect(rect);
         let _ = canvas.draw_rect(rect);
