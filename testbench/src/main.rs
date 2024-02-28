@@ -41,7 +41,6 @@ pub fn main() {
 
         for event in event_pump.poll_iter() {
             match event {
-                Event::Quit { .. } |
                 Event::KeyDown { keycode: Some(Keycode::Up), .. } => {
                     offset_y = offset_y - 1;
                 }
@@ -54,7 +53,7 @@ pub fn main() {
                 Event::KeyDown { keycode: Some(Keycode::Left), ..} => {
                     offset_x = offset_x - 1;
                 }
-                Event::KeyDown { keycode: Some(Keycode::Escape), .. } => {
+                Event::Quit { .. } | Event::KeyDown { keycode: Some(Keycode::Escape), .. } => {
                     break 'running
                 },
                 _ => {}

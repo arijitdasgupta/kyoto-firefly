@@ -1,6 +1,5 @@
-workspace = { members = [ "firefly", "game_container","testbench"] }
 [package]
-name = "kyoto-firefly"
+name = "game_container"
 version = "0.1.0"
 edition = "2021"
 

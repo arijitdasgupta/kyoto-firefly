@@ -1,9 +1,10 @@
-workspace = { members = [ "firefly", "game_container","testbench"] }
 [package]
-name = "kyoto-firefly"
+name = "firefly"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+game_container = { path = '../game_container' }
+rand = "0.8.5"
