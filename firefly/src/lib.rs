@@ -1,16 +1,16 @@
 use game_container::game_container::{GameContainer, Keys, Pixel, Pixels};
-use rand::Rng;
 pub struct Game {
-    width: u16,
-    height: u16,
-    framebuffer: Pixels
+    pub width: u16,
+    pub height: u16,
+    pub framebuffer: Pixels
 }
 
 impl Game {
-    fn new(width: u16, height: u16) -> Self {
+    pub fn new(width: u16, height: u16) -> Self {
         let mut fb = Vec::new();
+        let max_index = width as usize * height as usize;
 
-        for i in 0..(width * height) {
+        for _ in 0..max_index {
             fb.push(Pixel { r: 0, g: 0, b: 0, a: 0 })
         }
 
@@ -23,11 +23,11 @@ pub fn add(left: usize, right: usize) -> usize {
 }
 
 impl GameContainer for Game {
-    fn tick(self: Self, _keys: &Vec<Keys>) {
-        println!("key pressed");
+    fn tick(self: &mut Self, _keys: &Vec<Keys>) {
+        let max_idx = self.width as usize * self.height as usize;
 
-        for i in 0..(self.width * self.height) {
-            self.framebuffer[i] = Pixel { r: rng::thread }
+        for i in 0..max_idx {
+            self.framebuffer[i as usize] = Pixel { r: 100, g: 0, b: 0, a: 255 }
         }
     }
 }

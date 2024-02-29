@@ -1,4 +1,3 @@
-#[derive(Clone)]
 pub struct Pixel {
     pub r: u8,
     pub g: u8,
@@ -20,5 +19,5 @@ pub enum Keys {
 }
 
 pub trait GameContainer {
-    fn tick(self: Self, keys: &Vec<Keys>);
+    fn tick(self: &mut Self, keys: &Vec<Keys>);
 }

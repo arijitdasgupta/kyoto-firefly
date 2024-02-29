@@ -116,6 +116,7 @@ dependencies = [
 name = "testbench"
 version = "0.1.0"
 dependencies = [
+ "firefly",
  "game_container",
  "sdl2",
 ]
